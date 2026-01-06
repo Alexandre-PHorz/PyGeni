@@ -1,6 +1,7 @@
-from core import Game, Player, NPC
+from core import PyGeni
+from model import Player
 
-jogo = Game()
+jogo = PyGeni('MEU JOGI','1200x760')
 
 jogo.start()
 per = Player('Meu Nome')

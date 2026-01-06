@@ -24,20 +24,49 @@ class Player(Entity):
 
     def Walk(self):
         t = pygame.key.get_pressed()
-        # No Pygame, mexemos no self.rect.x ou self.rect.y
+        
+        # 1. Criamos um vetor de direção (x, y)
+        direction = pygame.math.Vector2(0, 0)
+        
+        # 2. Capturamos o input
         if t[pygame.K_w] or t[pygame.K_UP]:
-            self.rect.y -= self.vel
+            direction.y -= 1
         if t[pygame.K_s] or t[pygame.K_DOWN]:
-            self.rect.y += self.vel
+            direction.y += 1
         if t[pygame.K_a] or t[pygame.K_LEFT]:
-            self.rect.x -= self.vel
+            direction.x -= 1
         if t[pygame.K_d] or t[pygame.K_RIGHT]:
-            self.rect.x += self.vel
+            direction.x += 1
+
+        # 3. O SEGREDO: Normalização
+        # Se o comprimento do vetor for maior que zero (ele está se movendo)
+        if direction.length() > 0:
+            # Faz o vetor ter tamanho 1, mantendo a direção
+            direction = direction.normalize()
+            
+        # 4. Aplicamos a velocidade
+        # Agora, na diagonal, o vetor será algo como (0.7, 0.7)
+        # (0.7 * vel) + (0.7 * vel) resultará em uma velocidade final de exatamente 'vel'
+        self.rect.x += direction.x * self.vel
+        self.rect.y += direction.y * self.vel
     
-    def Interact(self):
-        t = pygame.key.get_just_pressed()
-        if t[pygame.K_KP_ENTER] or t[pygame.K_e]:
-            print('Interagio')
+    def Interact(self, reach=50):
+        # 'self' aqui é o Player
+        pos_player = pygame.math.Vector2(self.rect.center)
+        
+        for obj in self.game.instances: # Acessa a lista de instâncias do framework
+            if obj == self: continue # Pula o próprio player
+            
+            # 1. Checa se o objeto tem a função 'isInteract'
+            if hasattr(obj, 'isInteract'):
+                
+                # 2. Calcula a distância entre o centro do player e o objeto
+                pos_obj = pygame.math.Vector2(obj.rect.center)
+                distancia = pos_player.distance_to(pos_obj)
+                
+                # 3. Se estiver dentro do raio (reach)
+                if distancia <= reach:
+                    obj.isInteract() # Executa a função do objeto
 
 # Adicione (Entity) aqui também
 class NPC(Entity):

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pygeni"
+version = "0.1.0"
+authors = [
+  { name="Alexandre Pires Hörz", email="alexandre.phorz@gmail.com" },
+]
+description = "Um framework Python de alto nível para jogos Top-Down estilo RPG Maker."
+readme = "readme.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Games/Entertainment",
+]
+dependencies = [
+    "pygame-ce>=2.5.6",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Alexandre-PHorz/PyGeni"
