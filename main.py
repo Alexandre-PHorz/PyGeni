@@ -1,7 +1,7 @@
 from core import PyGeni
 from model import Player
 
-jogo = PyGeni('MEU JOGI','1200x760')
+jogo = PyGeni('MEU JOGI','768x768')
 
 jogo.start()
 per = Player('Meu Nome')
