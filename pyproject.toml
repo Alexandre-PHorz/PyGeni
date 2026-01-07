@@ -23,3 +23,9 @@ dependencies = [
 
 [project.urls]
 "Homepage" = "https://github.com/Alexandre-PHorz/PyGeni"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]  # Diz para procurar na pasta atual

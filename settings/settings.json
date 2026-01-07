@@ -1,0 +1,23 @@
+{
+  "display": {
+    "fullscreen": false,
+    "resolution": "768x768",
+    "vsync": true
+  },
+  "audio": {
+    "master_volume": 0.8,
+    "music_volume": 0.5,
+    "sfx_volume": 1.0
+  },
+  "controls": {
+    "key_up": ["w","up"],
+    "key_down": ["s","down"],
+    "key_left": ["a","left"],
+    "key_right": ["d","right"],
+    "key_interact":["e","None"]
+  },
+  "gameplay": {
+    "difficulty": "normal",
+    "show_debug_hitboxes": false
+  }
+}
