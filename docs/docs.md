@@ -8,6 +8,8 @@ Bem-vindo ao PyGeni, sua engine para criação de jogos em Python. Esta document
   * [Passo 1](#passo-1---estrutura)
   * [Passo 2](#passo-2---importação-e-configuração)
   * [Passo 3](#passo-3---ciclo-do-pygeni)
+* [Adicionar Elementos](#adicionar-elementos)
+  * [Criação de um Jogador](#criação-do-jogador)
 
 ## Inicialização
 
@@ -54,6 +56,8 @@ if __name__=='__main__':
     game.run()
 ```
 
+---
+
 ## Adicionar elementos
 
 Para que um jogo seja um jogo, ele precisa de elementos, e para adicionar eles é necessario crialos e adiciona-los ao jogo.
@@ -68,7 +72,7 @@ game.AddInstance(object)
 para configurar o objeto, usamos modelos, e cada item tem um modelo, veja a baixo como adicionalos
 
 ### Criação do Jogador
-Para a criação de um jogador, precisa chamar um modelo de jogador, com
+Para a criação de um jogador, precisa chamar um modelo de jogador,como ```Player()```, com
 
 ```python
 from model import Player

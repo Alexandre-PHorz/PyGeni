@@ -1,4 +1,4 @@
-# PyGeni Framework
+# PyGeni - Framework
 
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-green?style=for-the-badge)
 ![License](https://img.shields.io/badge/Licença-MIT-red?style=for-the-badge)

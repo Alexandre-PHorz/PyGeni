@@ -7,7 +7,7 @@ class Block:
             y:float=0,
             width:int=50,
             height:int=50,
-            on_interact_callback:function=None,
+            on_interact_callback=None,
             isSolid:bool=True,
             solidColor:tuple=(100,100,100)
             ):

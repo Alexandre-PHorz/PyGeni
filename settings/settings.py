@@ -4,7 +4,7 @@ import os
 # Pega o caminho da pasta onde este arquivo (settings.py) está
 BASE_DIR = os.path.dirname(__file__)
 
-def sett(filename='setting.json') -> dict:
+def sett(filename='settings.json') -> dict:
     # Cria o caminho completo: settings/setting.json
     path = os.path.join(BASE_DIR, filename)
     
